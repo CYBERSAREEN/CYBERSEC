@@ -1,0 +1,277 @@
+/* Global styles */
+* {
+    padding: 0; 
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: white;
+}
+
+/* Full height and width for html and body */
+html, body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+/* Flexbox for body */
+body {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    background: linear-gradient(to bottom, #000, #333);
+}
+
+/* Cursor blur effect */
+#cursor-blur {
+    height: 100px;
+    width: 100px;
+    background-color: #00fffb;
+    border-radius: 50%;
+    position: fixed;
+    z-index: 0;
+    filter: blur(30px);
+}
+
+/* Navigation bar styles */
+#nav {
+    width: 100vw;
+    height: 150px;
+    display: flex;
+    align-items: center;
+margin-left: 0;
+    gap: 45px;
+    justify-content: center;
+    position: fixed;
+    z-index: 99;
+    background-color: transparent;
+}
+
+#nav img {
+    height: 80px;
+    filter: invert(100%) brightness(200%);
+}
+
+#nav h4 {
+    text-transform: uppercase;
+}
+
+
+
+
+.video {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    z-index: -1;
+    position: fixed;
+}
+
+/* Main content styles */
+#main {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Page 1 styles */
+#page1 {
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+#page1 h1 {
+    font-size: 80px;
+    font-weight: 900;
+    position: relative;
+    color: #22cac7;
+}
+
+#page1 h1::before {
+    content: "LEARN . HACK . REPEAT";
+    position: absolute;
+    color: white;
+    top: -3px;
+    left: -3px;
+    -webkit-text-stroke: 1px violet;
+}
+
+#page1 h2 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 40px;
+    font-weight: 900;
+}
+
+#page1 p {
+    font-size: 15px;
+    font-weight: 900;
+    width: 70%;
+}
+
+/* Page 2 styles */
+#page2 {
+    min-height: 100vh;
+    width: 100vw;
+    z-index: 99;
+}
+/* Existing styles */
+#scroller {
+    /* background-color: red; */
+    white-space: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    position: relative;
+    z-index: 10;
+  }
+  #scroller::-webkit-scrollbar {
+    display: none;
+  }
+  #scroller-in {
+    display: inline-block;
+    white-space: nowrap;
+    animation-name: scroll;
+    animation-duration: 40s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+  
+  #scroller h4 {
+    display: inline-block;
+    font-size: 120px;
+    font-weight: 900;
+    font-family: gilroy;
+    margin-right: 20px;
+    transition: all linear 0.3s;
+    color:transparent;
+    -webkit-text-stroke: 2px #c684ff;
+  }
+  #scroller h4:hover {
+    color: #c684ff;
+    text-shadow: 1px 1px 15px #c684ff;
+  
+  }
+  
+  @keyframes scroll {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+/* Cards Container */
+#cards-container {
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    position: relative;
+    z-index: 10;
+}
+
+/* Individual Cards */
+.cards {
+    height: 300px;
+    width: 300px;
+    border-radius: 20px;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    transition: all ease 0.6s;
+    position: relative;
+}
+
+/* Background Images */
+#card1 {
+    background-image: url('/MAIN/os.jpg');
+}
+#card2 {
+    background-image: url('/MAIN/brain.jpg');
+}
+#card3 {
+    background-image: url('/MAIN/malware.jpg');
+}
+#card4 {
+    background-image: url('/MAIN/dark.jpg');
+}
+#card5 {
+    background-image: url('/MAIN/anonymous.jpg');
+}
+#card6 {
+    background-image: url('/MAIN/phishing.jpg');
+}
+#card7 {
+    background-image: url('/MAIN/OIP.jpeg');
+}
+#card8 {
+    background-image: url('/MAIN/netowork.jpg');
+}
+
+/* Overlay Styles */
+.overlay {
+    height: 100%;
+    width: 100%;
+    background-color: rgb(0, 255, 195);
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    opacity: 0;
+    transition: all ease 0.6s;
+}
+
+/* Overlay Text Styles */
+.overlay h4 {
+    color: #000;
+    font-size: 24px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    font-weight: 800;
+}
+
+.overlay p {
+    color: #000;
+    font-size: 16px;
+}
+
+/* Hover Effect */
+.cards:hover .overlay {
+    opacity: 1;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+
+    .cards {
+        height: 250px;
+        width: 50%;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .cards {
+        height: 200px;
+        width: 100%;
+    }
+
+    .overlay h4 {
+        font-size: 20px;
+    }
+
+    .overlay p {
+        font-size: 14px;
+    }
+}
